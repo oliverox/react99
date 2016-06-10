@@ -1,0 +1,20 @@
+.single-user{
+
+  text-align: center;
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+
+
+  .avatar {
+   border-radius: 5px;
+  }
+
+  figcaption {
+    height: 50px;
+    margin-top: $spacing;
+
+    .the-name {
+      margin-bottom: 5px;
+    }
+  }
+}

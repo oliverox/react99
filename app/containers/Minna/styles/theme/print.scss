@@ -1,0 +1,17 @@
+@media print {
+  #app-container {
+    min-width: 8.5in !important;
+    min-height: 11in !important;
+  }
+
+  #main-sidebar, #sidebar-alt, #main-header,  #main-footer {
+    display: none !important;
+  }
+
+  #main-content {
+    margin-left: 0px !important;
+    padding-top: 0px !important;
+    margin-right: 0px !important;
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,159 @@
+// Fonts
+// ------------------------------------------------------------------
+$openSans           : 'Open Sans', 'Helvetica Neue', sans-serif       !default;
+
+// Paths
+// ------------------------------------------------------------------
+$imagesPath         : '/img'            !default;
+$OpenSansPath       : '/fonts/opensans' !default;
+$ionicons-font-path : '/fonts/ion'      !default;
+
+// Sizes & Timing & Misc
+// ------------------------------------------------------------------
+
+$mainSidebarWidth   : 220px   !default;
+$altSidebarWidth    : 220px   !default;
+$headerHeight       : 50px    !default;
+$spacing            : 15px    !default;
+$spacing-large      : 40px    !default;
+$animationTime      : .4s     !default;
+$darkenAmount       : 10%     !default;
+
+// Colors
+// ------------------------------------------------------------------
+$gray-darkest       : #2c2e2f !default;
+$gray-darker        : #444444 !default;
+$gray-dark          : #555555 !default;
+$gray               : #6d6d6d !default;
+$gray-light         : #a6a5a5 !default;
+$gray-lighter       : #d9d9d9 !default;
+$gray-lightest      : #f4f5f5 !default;
+
+$bleach             : #ffffff !default;
+
+$green              : #94BA65 !default;
+$blue               : #2790B0 !default;
+$yellow             : #EBBB54 !default;
+$red                : #CF4444 !default;
+$black              : #3A4149 !default;
+$white              : #d9d9d9 !default;
+$green-dark         : darken($green,  $darkenAmount) !default;
+$blue-dark          : darken($blue,   $darkenAmount) !default;
+$yellow-dark        : darken($yellow, $darkenAmount) !default;
+$red-dark           : darken($red,    $darkenAmount) !default;
+$black-dark         : darken($black,  $darkenAmount) !default;
+$white-dark         : darken($white,  $darkenAmount) !default;
+
+// Company Colors
+$facebook           : #3B5998 !default;
+$twitter            : #55acee !default;
+$google-plus        : #dc4a38 !default;
+$youtube            : #cc181e !default;
+$linkedin           : #1176b1 !default;
+$instagram          : #3f729b !default;
+$pintrest           : #cb2027 !default;
+$quora              : #a82400 !default;
+$flickr             : #ff0084 !default;
+$vimeo              : #aad450 !default;
+$tumblr             : #32506d !default;
+$foursquare         : #0072b1 !default;
+$ycombinator        : #f0652f !default;
+$airbnb             : #fc5e65 !default;
+$coinbase           : #2c87e4 !default;
+$spotify            : #2ebd59 !default;
+$linode             : #3bb878 !default;
+$amazon             : #f7981d !default;
+$digitalocean       : #3686be !default;
+$twilio             : #df242e !default;
+$trello             : #3a8ab7 !default;
+$basecamp           : #19b533 !default;
+$asana              : #1e8ad2 !default;
+$dribbble           : #ea4c89 !default;
+
+// Sport Colors
+$dolphins           : #008D97 !default;
+$heat               : #B62630 !default;
+$warriors           : #FFCC33 !default;
+
+
+// YOUR ACCENT COLOR
+// Feel free to customize this value to match your branding.
+$accent               : #55aaee !default;
+$accent-dark          : darken($accent, $darkenAmount) !default;
+
+// The color of selected text
+$selection-text-color : #000 !default;
+
+// The color of active links in the sidebar
+// This could look good set to $accent but YMMV
+$sidebar-active-color : $accent !default;
+
+$sidebar-color         : $black-dark                  !default;
+$sidebar-heading-color : lighten($sidebar-color, 10%) !default;
+$sidebar-link-color    : lighten($sidebar-color, 40%) !default;
+$sidebar-footer-color  : darken($sidebar-color, 3%)   !default;
+
+// Bootstrap overrides
+// ------------------------------------------------------------------
+
+// Default sans-serif font
+$font-family-sans-serif    : $openSans !default;
+
+// Brand colors
+$brand-primary             : $black  !default;
+$brand-success             : $green  !default;
+$brand-info                : $blue   !default;
+$brand-warning             : $yellow !default;
+$brand-danger              : $red    !default;
+
+// Default button border
+$btn-default-border        : $gray-lighter  !default;
+$btn-default-bg            : $gray-lightest !default;
+
+// Heading small color
+$headings-small-color      : $gray-light    !default;
+$headings-font-weight      : 300;
+
+// Navbars
+$navbar-default-bg         : $gray-lightest !default;
+$navbar-inverse-bg         : $gray-darkest  !default;
+$navbar-inverse-color      : $blue          !default;
+$navbar-inverse-link-color : $gray-light    !default;
+
+// Prgress bars
+$progress-bar-bg           : $gray-light    !default;
+$progress-bg               : $gray-lightest !default;
+
+// Default label background
+$label-default-bg          : $gray-lighter  !default;
+
+// Horizontal line color
+$hr-border                 : $gray-lighter  !default;
+
+// Page header border color
+$page-header-border-color  : $gray-lightest !default;
+
+// Table border color
+$table-border-color        : $gray-lightest !default;
+
+// Jumbotron background color
+$jumbotron-bg              : $gray-lightest !default;
+
+// Link style
+$link-hover-decoration     : none           !default;
+
+// Blockquote border color
+$blockquote-border-color   : $accent        !default;
+
+// Muted text color
+$text-muted                : $gray-lighter  !default;
+
+// Wells
+$well-border               : $gray-lighter !default;
+$well-bg                   : transparent !default;
+
+// Forms
+$input-bg                   : transparent;
+$input-border-radius        : 0;
+
+$panel-border-radius : 5px;

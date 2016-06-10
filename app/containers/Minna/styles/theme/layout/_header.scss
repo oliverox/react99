@@ -1,0 +1,260 @@
+#main-header {
+  background: #fff;
+  margin-left: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  height: $headerHeight;
+  z-index: 110 !important;
+  padding: 0 15px;
+
+  // This transition is necessary. It allows JS to detect that the transition ended.
+  // Ultimately this allows the sidebars to disappear when not in transition mode (or displayed)
+  // since they will show up on iOS 8 when the bounce effect happens.
+  @include transition(all 0.01s ease-out);
+
+  @media (min-width: $screen-sm-min) {
+    @include transition(all $animationTime ease-out);
+  }
+
+  @media (max-width: $screen-xs-max) {
+    margin-left: 0px;
+    z-index: 9999;
+  }
+
+  &.fixed {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50px;
+      height: 20px;
+      @include opacity(0.05);
+      @include gradient-vertical($gray-darkest, rgba(0,0,0,0), 0%, 100%);
+    }
+
+    position: fixed;
+  }
+
+  .icon-link {
+    margin-top: -5px;
+    display: inline-block;
+    padding: 10px;
+    color: $gray-light;
+    font-size: 28px;
+    cursor: pointer;
+
+    .icon {
+      @include userSelect;
+      @include transition(color $animationTime ease-out);
+      &:hover {
+        color: $gray;
+      }
+
+      &:active {
+        color: $gray-dark;
+      }
+    }
+
+    &.alert-button {
+      width: 50px;
+
+      .alerts {
+        font-size: 12px;
+        display: block;
+        position: relative;
+        top: 6px;
+        left: $spacing;
+        width: 280px;
+        float: right;
+        margin-right: -32px;
+
+        color: $gray-dark;
+        z-index: 1;
+
+
+        &.display-as-alerts {
+          top: 20px;
+
+          .alert-list {
+            max-height: 480px;
+            overflow-y: auto;
+
+            .single-alert {
+              &.unread {
+                background-color: rgba(255,255,255,0.95);
+              }
+              border: 1px solid $gray-lighter;
+              margin-bottom: $spacing;
+            }
+          }
+        }
+
+        &.display-as-list {
+          border: 1px solid $gray-lighter;
+          box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+          background-color: #fff;
+
+          .alert-list {
+            .single-alert {
+
+              &:last-child {
+                border-bottom: none;
+              }
+              &.unread {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+
+        .action-container {
+          background-color: $gray-lightest;
+          border-bottom: 1px solid $gray-lighter;
+          padding: 10px;
+          .btn {
+            width: 48%;
+            &:last-child {
+              margin-left: 4%;
+            }
+
+            &:only-child {
+              width: 100%;
+              margin-left: 0;
+            }
+          }
+
+        }
+
+        .alert-list {
+          @include list-unstyled;
+          margin-bottom: 0;
+
+          max-height: 300px;
+          overflow-y: auto;
+
+
+          .single-alert {
+            @include transition(background-color $animationTime ease-out);
+            // @include transition(opacity 0.01s ease-in);
+            min-height: 50px;
+            padding: $spacing;
+            border-bottom: 1px solid $gray-lightest;
+            background-color: $gray-lightest;
+
+            &.unread {
+              border-bottom-color: $gray-lighter;
+
+              .alert-time {
+                color: $gray-light !important;
+              }
+            }
+
+            @include transition(opacity 1s ease-in);
+
+            &.alert-transition-enter {
+              opacity: 0.01;
+            }
+
+            &.alert-transition-enter.alert-transition-enter-active {
+              opacity: 1;
+            }
+
+            &.alert-transition-leave {
+              opacity: 1;
+            }
+
+            &.alert-transition-leave.alert-transition-leave-active {
+              opacity: 0.01;
+            }
+
+            .alert-icon, .alert-avatar {
+              float: left;
+              width: 30px;
+              vertical-align: top;
+              text-align: center;
+
+              .icon {
+                font-size: 26px;
+              }
+
+              .avatar {
+                border-radius: 5px;
+              }
+            }
+
+            .alert-container {
+              padding-left: 45px;
+
+              .alert-time {
+                color: $gray-lighter;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 10px;
+                margin-top: 5px;
+              }
+
+              .alert-actions {
+                margin-top: 15px;
+
+                .btn + .btn {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar-toggler {
+    display: block;
+    float: left;
+    font-size: 36px;
+    height: 50px;
+    overflow: hidden;
+    color: $gray-lighter;
+
+    // Improve the hit area for the toggle,
+    // add padding and take away margin
+    margin-left: -10px;
+    padding: 0 10px;
+
+    &:hover {
+      color: $gray-light;
+    }
+
+    &:active {
+      color: $gray;
+    }
+  }
+
+  .branding {
+    display: block;
+
+    // top: -15px;
+    // position: relative;
+    // overflow: hidden;
+    height: 50px;
+    float: left;
+    margin-left: 5px;
+    img {
+      align: top;
+      max-height: 50px;
+    }
+
+    .text {
+      font-weight: 300;
+      font-size: 32px;
+
+    }
+  }
+
+  .icons-right {
+    float: right;
+  }
+}

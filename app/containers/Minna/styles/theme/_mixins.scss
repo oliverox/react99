@@ -1,0 +1,89 @@
+/* Generic prefixer */
+@mixin prefix($property, $values) {
+	-webkit-#{$property}: -webkit-#{$property} #{$values};
+  -moz-#{$property}: -moz-#{$property} #{$values};
+  -ms-#{$property}: -ms-#{$property} #{$values};
+  -o-#{$property}: -o-#{$property} #{$values};
+  #{$property}: #{$property} #{$values};
+}
+
+@mixin transform ($transforms) {
+	-webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+	transform: $transforms;
+}
+
+@mixin blur($amount: 5px){
+  -webkit-filter: blur($amount);
+  -moz-filter: blur($amount);
+  -o-filter: blur($amount);
+  -ms-filter: blur($amount);
+  filter: blur($amount);
+}
+@mixin transition($transitions) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  -o-transition: $transitions;
+  transition: $transitions;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-ms-input-placeholder      {@content}
+  &::-moz-placeholder          {@content}
+  &:-moz-placeholder           {@content}
+}
+
+@mixin userSelect($select: none) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  -o-user-select: $select;
+
+  // Uncomment when supported
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+  // user-select: $select;
+}
+
+@mixin animation($animations) {
+	-webkit-animation: $animations;
+  -moz-animation: $animations;
+	-ms-animation: $animations;
+  -o-animation: $animations;
+	animation: $animations;
+}
+
+@mixin select-color($bg-color: #fff, $text-color: #000){
+  ::-moz-selection {
+    background: $bg-color;
+    color: $text-color;
+    text-shadow: none !important;
+  }
+
+  ::selection {
+    background: $bg-color;
+    color: $text-color;
+    text-shadow: none !important;
+  }
+}
+
+@mixin openMixin($distance, $direction ){
+  @media screen and (max-width: $screen-xs-max) {
+    @include transform(translate3d($distance, 0, 0));
+  }
+
+  @media (min-width: $screen-sm-min) {
+    margin-#{$direction}: abs($distance);
+  }
+}
+
+@mixin outline-solid($bg-color, $fg-color: #fff){
+  &:hover {
+    color: $fg-color !important;
+    background-color: $bg-color !important;
+    border-color: $bg-color !important;
+  }
+}

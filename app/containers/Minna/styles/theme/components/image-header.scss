@@ -1,0 +1,41 @@
+.image-header {
+  position: relative;
+  text-align: center;
+  background: $black no-repeat center center;
+  background-size: cover;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: block;
+    opacity: .1;
+    z-index: 101;
+  }
+
+  .image-header-content {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    position: relative;
+    z-index: 102;
+
+    .image-header-text {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .image-header-title {
+      color: #fff;
+      font-size: 40px;
+      text-shadow: 1px 1px 10px rgba(0,0,0,0.7);
+    }
+  }
+}

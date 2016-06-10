@@ -1,0 +1,29 @@
+#page-404 {
+  height: 100%;
+  color: $gray-dark;
+  background: url('#{$imagesPath}/404-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: $gray-light;
+  text-align: center;
+
+  h1 {
+    @include transition(all $animationTime ease-out);
+    margin-top: 100px;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    font-size: 128px;
+    color: transparent;
+
+    &:hover {
+      text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #323232;
+    padding-top: 10px;
+  }
+}

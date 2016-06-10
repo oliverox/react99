@@ -1,0 +1,31 @@
+.progress {
+  height: 10px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  .progress-bar-accent {
+    background-color: $accent;
+  }
+}
+
+.progress-bar {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.progress-bar-primary {
+  background-color: $black;
+}
+
+.progress-bar-xs {
+  height: 3px;
+}
+
+.progress-bar-sm {
+  height: 5px;
+}
+
+.progress-bar-lg {
+  height: 20px;
+}
+

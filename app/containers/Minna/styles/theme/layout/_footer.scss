@@ -1,0 +1,16 @@
+#main-footer {
+  text-align: right;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: $spacing;
+  color: $gray-lighter;
+
+  a {
+    color: $gray-lighter;
+
+    &:hover {
+      text-decoration: underline;
+      color: $accent;
+    }
+  }
+}

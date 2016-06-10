@@ -1,0 +1,55 @@
+#main-content {
+  background-color: $gray-lightest;
+  position: relative;
+  min-height: 100%;
+  padding-top: 10px + $headerHeight;
+  z-index: 100;
+
+  @media (min-width: $screen-sm-min) {
+    @include transform(translate3d(0, 0, 0));
+    @include transition(all $animationTime ease-out);
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding-top: $spacing + $headerHeight;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  .full-page {
+    margin-top: -$spacing;
+  }
+
+
+
+  .full-width-content {
+    background-color: #fff;
+    padding-top: $spacing;
+    margin-bottom: $spacing;
+
+
+    .container-fluid {
+      max-width: 1000px;
+    }
+  }
+
+  .section {
+    background-color: #fff;
+    margin-top: -$spacing ;
+    margin-bottom: $spacing;
+    width: 100%;
+    padding: $spacing ($spacing + ($spacing/2)) 0;
+
+    @media (min-width: $screen-sm-min) {
+      width: inherit;
+      margin: 0 $spacing $spacing;
+    }
+
+    div[class^="col"] {
+      padding-right: $spacing/2;
+      padding-left: $spacing/2;
+    }
+  }
+}

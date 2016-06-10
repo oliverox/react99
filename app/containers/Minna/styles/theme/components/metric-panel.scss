@@ -1,0 +1,87 @@
+.metric-panel {
+
+  &.one-color .panel-body .metric-label .icon {
+    &.up {
+      color: $green-dark;
+    }
+
+    &.down {
+      color: $red-dark;
+    }
+
+    &.same {
+      color: $yellow-dark;
+    }
+  }
+
+  // One off change to make sure the metric details are visible on white panels
+  &.panel-white .panel-body .metric-details {
+    color: $gray-light;
+  }
+
+  &.with-chart .panel-body {
+    padding-left: 2px;
+    padding-right: 3px;
+    padding-bottom: 0;
+    .c3-tooltip {
+      color: $gray-dark;
+      text-align: left;
+      .name span {
+        outline: 1px solid black;
+      }
+    }
+    svg {
+      margin-bottom: -12px;
+    }
+  }
+
+  .panel-body {
+
+    @include border-bottom-radius(($panel-border-radius - 1));
+    text-align: center;
+
+    .the-metric {
+      font-size: $font-size-h1;
+      font-weight: 300;
+
+      .metric-suffix {
+        text-transform: uppercase;
+        opacity: 0.4;
+        font-size: $font-size-h3;
+        margin-left: 2px;
+      }
+    }
+
+    .metric-label {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 5px;
+
+      .icon {
+
+        margin-left: 5px;
+        &.up {
+          color: $green;
+        }
+
+        &.down {
+          color: $red;
+        }
+
+        &.same {
+          color: $yellow;
+        }
+      }
+    }
+
+    .metric-details {
+      font-size: $font-size-small;
+      font-weight: bold;
+    }
+  }
+}
+
+// Two metric panels together
+.metric-panel + .metric-panel {
+  margin-top: -$spacing;
+}

@@ -1,0 +1,68 @@
+#page-icons {
+
+  .selected-icon {
+    position: absolute;
+    margin-top: -200px;
+    width: 100%;
+    text-align: center;
+    display: none;
+
+    @media (min-width: $screen-sm-min) {
+      display: block;
+    }
+
+    i {
+      font-size: 100px;
+    }
+  }
+
+  #icon-sidebar {
+    margin-top: 60px;
+  }
+
+  #ion-search-results {
+    min-height: 400px;
+    margin-bottom: 100px;
+    margin-top: 80px;
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 70px;
+    }
+  }
+
+  .icons {
+    margin: 40px auto;
+    padding-left: 5px;
+    list-style: none;
+    text-align: left;
+    font-size: 1px;
+
+
+    li {
+      position: relative;
+      z-index: 0;
+      display: inline-block;
+      padding: 15px;
+      width: 65px;
+      border-radius: 4px;
+      list-style: none;
+      text-align: center;
+      font-weight: normal;
+      font-size: 32px;
+      cursor: pointer;
+
+      @media (min-width: $screen-sm-min) {
+        padding: 22px;
+        width: 75px;
+      }
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}

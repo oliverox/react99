@@ -1,0 +1,20 @@
+#page-timeline {
+
+  min-height: 400px;
+
+  .btn-group {
+    margin-bottom: $spacing;
+  }
+
+  .filter {
+    margin-right: $spacing * 2;
+    .filter-header {
+      float: left;
+      margin-right: $spacing;
+    }
+
+    .dropdown-toggle {
+      margin-top: 5px;
+    }
+  }
+}

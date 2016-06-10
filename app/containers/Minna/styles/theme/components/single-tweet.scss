@@ -1,0 +1,145 @@
+.single-tweet {
+  border: 1px solid #e1e8ed;
+  padding: $spacing;
+  border-radius: 4px;
+  margin-bottom: $spacing;
+  overflow: hidden;
+
+
+  @include select-color($bg-color: $twitter, $text-color: #fff );
+
+  &:hover {
+    border-color: #ccd6dd;
+  }
+
+  &.tweet-narrow {
+    .tweet-header {
+      .tweet-follow-button {
+        display: none;
+      }
+    }
+  }
+
+  .tweet-media {
+    margin: (-$spacing) (-$spacing) $spacing;
+    max-height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid #e1e8ed;
+
+    img {
+      min-width: 100%;
+    }
+  }
+
+  .tweet-header {
+    margin-bottom: $spacing;
+    overflow: hidden;
+
+    .tweet-author {
+
+      &:hover {
+        .tweet-author-metadata {
+          .tweet-author-name {
+            color: $twitter;
+          }
+        }
+      }
+
+      .tweet-avatar {
+        .tweet-the-avatar {
+          float: left;
+          width: 36px;
+          border-radius: 4px;
+        }
+      }
+
+      .tweet-author-metadata {
+        padding-left: 10px;
+        display: inline-block;
+
+        .tweet-author-name {
+          display: block;
+          font-weight: bold;
+        }
+
+        .tweet-author-username {
+          display: block;
+          color: $gray;
+        }
+      }
+    }
+
+    .tweet-follow-button {
+        float: right;
+        display: inline-block;
+        vertical-align: top;
+
+        border: 1px solid $twitter;
+        padding: 5px 10px;
+        font-weight: bold;
+        color: $twitter;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: $twitter;
+          color: #fff;
+        }
+      }
+  }
+
+  .tweet-body {
+    .tweet-text {
+      font-size: 16px;
+      color: $gray-darker;
+
+      a {
+        color: #2b7bb9;
+
+        &:hover {
+          color: #3b94d9;
+        }
+      }
+    }
+    .tweet-dateline {
+      margin: 5px 0;
+
+      a {
+        color: $gray;
+      }
+    }
+    .tweet-actions{
+      margin-top: 10px;
+      .tweet-action {
+        padding: 5px 10px;
+
+        color: $gray-light;
+        &.tweet-action-reply{
+          margin-right: 5px;
+          padding-left: 0;
+          &:hover {
+            // Blue
+            color: #3b94d9;
+          }
+        }
+        &.tweet-action-retweet{
+          &:hover {
+            // Green
+            color: #5c913b;
+          }
+        }
+        &.tweet-action-favorite{
+          &:hover {
+            // Yellow
+            color: #ffac33;
+          }
+        }
+      }
+    }
+  }
+
+  .icon {
+    &.icon-verified {
+      color: #8acaf7;
+    }
+  }
+}

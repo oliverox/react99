@@ -3,6 +3,7 @@
 // See http://blog.mxstbr.com/2016/01/react-apps-with-pages for more information
 // about the code splitting business
 // import { getHooks } from 'utils/hooks';
+import Dashboard from 'containers/Minna/components/dashboard';
 
 const errorLoading = (err) => {
   console.error('Dynamic page loading failed', err); // eslint-disable-line no-console
@@ -15,7 +16,6 @@ const loadModule = (cb) => (componentModule) => {
 export default function createRoutes() {
   // Create reusable async injectors using getHooks factory
   // const { injectReducer, injectSagas } = getHooks(store);
-
   return [
     {
       path: '/',
@@ -23,6 +23,25 @@ export default function createRoutes() {
       getComponent(nextState, cb) {
         const importModules = Promise.all([
           System.import('containers/HomePage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/minna',
+      name: 'minna',
+      childRoutes: [
+        { path: 'dashboard', component: Dashboard },
+      ],
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/Minna'),
         ]);
 
         const renderRoute = loadModule(cb);

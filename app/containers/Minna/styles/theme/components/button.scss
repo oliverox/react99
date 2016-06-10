@@ -1,0 +1,69 @@
+.btn {
+
+  &:focus {
+      outline: none !important;
+    }
+
+  &.btn-accent {
+    @include button-variant(#fff, $accent, $accent-dark);
+  }
+
+  &.outline {
+
+    &.outline-subtle {
+      border-color: $gray-lighter !important;
+      color: $gray-light !important;
+
+      &.btn-link {
+        border-color: transparent !important;
+        &:hover {
+          color: $gray !important;
+        }
+      }
+    }
+
+    &.btn-default {
+      @include button-variant($gray-light, transparent, $gray-light);
+      @include outline-solid ($gray-light);
+    }
+
+    &.btn-accent {
+      @include button-variant($accent, transparent, $accent);
+      @include outline-solid ($accent);
+    }
+
+    &.btn-primary {
+      @include button-variant($brand-primary, transparent, $brand-primary);
+      @include outline-solid ($brand-primary);
+    }
+
+    &.btn-success {
+      @include button-variant($brand-success, transparent, $brand-success);
+      @include outline-solid ($brand-success);
+    }
+
+    &.btn-info {
+      @include button-variant($brand-info , transparent, $brand-info );
+      @include outline-solid ($brand-info);
+    }
+
+    &.btn-warning {
+      @include button-variant($brand-warning, transparent, $brand-warning);
+      @include outline-solid ($brand-warning);
+    }
+
+    &.btn-danger {
+      @include button-variant($brand-danger, transparent, $brand-danger);
+      @include outline-solid ($brand-danger);
+    }
+
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.touch-link {
+  cursor: pointer;
+}

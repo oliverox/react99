@@ -1,0 +1,22 @@
+#page-email-templates {
+  overflow: hidden;
+  $scale-amount: 0.5;
+
+  // "How can I scale the content of an iframe?"
+  // http://stackoverflow.com/questions/166160/how-can-i-scale-the-content-of-an-iframe
+  .frame {
+    width: 200%;
+    height: 1000px;
+    margin-bottom: -490px; // by being -490px indead of -500px, we get a 20px bottom margin (10*2)
+    border: 1px solid $gray-light;
+    -ms-zoom: $scale-amount;
+    -moz-transform: scale($scale-amount);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale($scale-amount);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale($scale-amount);
+    -webkit-transform-origin: 0 0;
+    transform: scale($scale-amount);
+    transform-origin: 0 0;
+  }
+}

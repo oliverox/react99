@@ -1,0 +1,57 @@
+
+  @each $name, $color in (
+    gray-darkest    : $gray-darkest    ,
+    gray-darker     : $gray-darker     ,
+    gray-dark       : $gray-dark       ,
+    gray            : $gray            ,
+    gray-light      : $gray-light      ,
+    gray-lighter    : $gray-lighter    ,
+    gray-lightest   : $gray-lightest   ,
+    bleach          : $bleach          ,
+    green           : $green           ,
+    blue            : $blue            ,
+    yellow          : $yellow          ,
+    red             : $red             ,
+    black           : $black           ,
+    white           : $white           ,
+    green-dark      : $green-dark      ,
+    blue-dark       : $blue-dark       ,
+    yellow-dark     : $yellow-dark     ,
+    red-dark        : $red-dark        ,
+    black-dark      : $black-dark      ,
+    white-dark      : $white-dark      ,
+    facebook        : $facebook        ,
+    twitter         : $twitter         ,
+    google-plus     : $google-plus     ,
+    youtube         : $youtube         ,
+    linkedin        : $linkedin        ,
+    instagram       : $instagram       ,
+    pintrest        : $pintrest        ,
+    quora           : $quora           ,
+    flickr          : $flickr          ,
+    vimeo           : $vimeo           ,
+    tumblr          : $tumblr          ,
+    foursquare      : $foursquare      ,
+    ycombinator     : $ycombinator     ,
+    airbnb          : $airbnb          ,
+    coinbase        : $coinbase        ,
+    spotify         : $spotify         ,
+    linode          : $linode          ,
+    amazon          : $amazon          ,
+    digitalocean    : $digitalocean    ,
+    twilio          : $twilio          ,
+    trello          : $trello          ,
+    basecamp        : $basecamp        ,
+    asana           : $asana           ,
+    dribbble        : $dribbble        ,
+    accent          : $accent          ,
+    accent-dark     : $accent-dark     )
+  {
+    .#{'bg-' +$name} {
+      background-color: $color !important;
+    }
+
+    .#{'fg-' +$name} {
+      color: $color !important;
+    }
+  }

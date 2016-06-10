@@ -1,0 +1,155 @@
+@mixin panel-maker($type, $bg-color,$bg-color-body, $fg-color, $one-color: false){
+  &.panel-#{$type} {
+
+    ::selection {
+      background: #fff;
+      color: $selection-text-color;
+    }
+
+    ::-moz-selection {
+      background:  #fff;
+      color: $selection-text-color;
+    }
+
+    .panel-heading, .panel-footer {
+      background-color: $bg-color;
+      .panel-title {
+        color: $fg-color;
+
+      }
+    }
+
+    .panel-heading + .panel-body {
+      @include border-top-radius(0);
+    }
+
+    .panel-body{
+      @include border-top-radius(($panel-border-radius - 1));
+      background-color: $bg-color-body;
+      @if $one-color == true  {
+        background-color: $bg-color;
+      }
+
+      color: $fg-color;
+    }
+
+    a {
+      text-decoration: underline;
+      color:  $fg-color;
+
+      &:hover {
+        color: darken($fg-color, 15%);
+      }
+
+      &:active {
+        color: $bg-color;
+      }
+    }
+
+    .btn {
+      color: $fg-color;
+      border-color: $bg-color;
+
+      @if $one-color == true  {
+        border-color: $bg-color-body;
+      }
+
+      &:hover, &:focus {
+        border-color: $bg-color;
+        background-color: $bg-color;
+
+        @if $one-color == true  {
+          border-color: $bg-color-body;
+          background-color: $bg-color-body;
+        }
+      }
+    }
+
+    .fg-panel-dark, .metric-details {
+      color: lighten($bg-color, 15%);
+
+      @if $one-color == true  {
+        color: darken($bg-color-body, 4%);
+      }
+
+      @if lightness($bg-color-body) < 10% {
+        color: $gray-lighter;
+      }
+
+    }
+  }
+}
+
+.panel {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  @include panel-maker("primary", $black, $black-dark, #fff);
+  @include panel-maker("success", $green, $green-dark, #fff);
+  @include panel-maker("info",    $blue, $blue-dark, #fff);
+  @include panel-maker("warning", $yellow, $yellow-dark, #fff);
+  @include panel-maker("danger",  $red, $red-dark, #fff);
+  @include panel-maker("white",   $white, $white-dark, #fff);
+  @include panel-maker("accent",  $accent, $accent-dark, #fff);
+
+  &.one-color {
+    @include panel-maker("primary", $black, $black-dark, #fff, true);
+    @include panel-maker("success", $green, $green-dark, #fff, true);
+    @include panel-maker("info",    $blue, $blue-dark, #fff, true);
+    @include panel-maker("warning", $yellow, $yellow-dark, #fff, true);
+    @include panel-maker("danger",  $red, $red-dark, #fff, true);
+    @include panel-maker("default", transparent, transparent, $gray, true);
+    @include panel-maker("white",   $white, $white-dark, $gray, true);
+    @include panel-maker("accent",  $accent, $accent-dark, #fff, true);
+  }
+
+  .panel-heading {
+    border: none;
+    background-color: transparent;
+    .panel-title {
+      font-weight: bold;
+      color: $gray;
+    }
+  }
+
+  .panel-body{
+    background-color: #fff;
+    color: $gray-dark;
+
+    .full-width-graph-container {
+      .c3 {
+        margin-left: -7px;
+        margin-right: -7px;
+        .c3-line {
+          opacity: 0 !important;
+        }
+
+        .c3-area {
+          opacity: .3 !important;
+        }
+      }
+    }
+  }
+
+  .panel-footer {
+    border: none;
+    background-color: #fff;
+  }
+
+  .btn {
+    background-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $gray-lighter;
+    &:hover, &:focus {
+      border-color: $gray-lighter;
+      background-color: $gray-lightest;
+      outline: none;
+    }
+  }
+
+  .fg-panel-dark, .metric-details {
+    color: $gray-lighter;
+  }
+}

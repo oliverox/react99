@@ -1,0 +1,75 @@
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"] {
+  border: none;
+  outline: none;
+  border-radius: 0 !important;
+  border-bottom: 1px solid $gray-lighter;
+  padding: 0 2px;// ($spacing / 2);
+
+  &[disabled] {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+    padding-left: 10px;
+  }
+}
+
+.form-group {
+  .control-label {
+    padding-left: 2px;
+  }
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: transparent;
+  border-color: transparent !important;
+}
+
+
+.form-control {
+  outline: none;
+  box-shadow: none !important;
+  color: $gray-darker;
+
+  &:focus {
+    outline: none !important;
+    border-color: $accent;
+  }
+}
+
+.form-horizontal {
+  .control-label {
+    padding-left: $spacing;
+  }
+}
+
+.has-warning,
+.has-error,
+.has-success {
+  // The new hotness? ionicons. Replace glyphicons with it.
+  .glyphicon {
+    font-family: $ionicons-font-family;
+
+    &.glyphicon-ok:before  {
+      content: $ionicon-var-checkmark;
+    }
+
+    &.glyphicon-warning-sign:before {
+      content: $ionicon-var-alert;
+    }
+
+    &.glyphicon-remove:before {
+      content: $ionicon-var-close;
+    }
+  }
+}
+
+.input-group-addon, .input-group-btn .btn {
+  border-color: transparent;
+  background-color: transparent;
+}

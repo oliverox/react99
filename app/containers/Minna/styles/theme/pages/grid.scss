@@ -1,0 +1,28 @@
+#page-grid {
+  .show-grid  {
+
+    > div {
+
+      margin-bottom: $spacing;
+
+      &:before {
+        content: attr(class);
+        text-align: center;
+        padding: 10px 0;
+        background-color: $gray-lightest;
+        border: 1px solid $gray-lighter;
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+
+      &:hover {
+
+        &:before{
+          background-color: $accent;
+
+        }
+      }
+    }
+  }
+}

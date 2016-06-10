@@ -1,0 +1,28 @@
+html, body, #app-container, #app-wrapper {
+  min-height: 100%;
+  height: 100%;
+  background-color: $gray-lightest;
+}
+
+body {
+  @include select-color($accent, $selection-text-color);
+  -webkit-font-smoothing: antialiased;
+
+  #app-wrapper {
+
+    .skip-to-main-content {
+      position: absolute;
+      background-color: $accent;
+      z-index: 1000 ;
+      padding: 15px;
+      width: $mainSidebarWidth;
+      text-align: center;
+    }
+
+    &.open-sidebar {
+      @media (max-width: $screen-xs-max) {
+        overflow: hidden;
+      }
+    }
+  }
+}

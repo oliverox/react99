@@ -21,7 +21,6 @@ const addDevMiddlewares = (app, options) => {
   // Since webpackDevMiddleware uses memory-fs internally to store build
   // artifacts, we use it instead
   const fs = middleware.fileSystem;
-
   app.get('*', (req, res) => {
     const file = fs.readFileSync(path.join(compiler.outputPath, 'index.html'));
     res.send(file.toString());
@@ -35,7 +34,6 @@ const addProdMiddlewares = (app, options) => {
   // and other good practices on official Express.js docs http://mxs.is/googmy
   app.use(compression());
   app.use(options.output.publicPath, express.static(options.output.path));
-
   app.get('*', (req, res) => res.sendFile(path.join(options.output.path, 'index.html')));
 };
 

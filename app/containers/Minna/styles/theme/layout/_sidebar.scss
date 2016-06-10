@@ -1,0 +1,224 @@
+$big-spacing: 70px;
+
+#main-sidebar, #sidebar-alt {
+  @include select-color(#fff);
+  background: $sidebar-color;
+  top: 0;
+  bottom: 0;
+  visibility:hidden;
+  overflow-y: auto;
+  position: fixed;
+  height: auto !important;
+  padding: 10px 0;
+  z-index: 1;
+
+  @media (min-width: $screen-sm-min) {
+    padding-top: $big-spacing;
+    @include transition(padding $animationTime ease-out);
+  }
+
+  &::-webkit-scrollbar{
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track{
+    background: rgba(0, 0, 0, 0);
+  }
+
+  &::-webkit-scrollbar-thumb{
+    background: $gray;
+  }
+
+  &.transitioning{
+    visibility:visible;
+  }
+
+  &.in {
+    visibility:visible;
+  }
+
+  .dropdown {
+    .downdown-trigger {
+      &.toggled {
+        .the-label:before {
+          color: $accent;
+          -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+
+        .badge {
+          opacity: 0;
+        }
+      }
+
+      .badge {
+        opacity: 1;
+      }
+
+      .the-label:before {
+        @include transition(all $animationTime ease-out);
+        content: $ionicon-var-ios-arrow-forward;
+        font-weight: normal;
+        @extend .ion;
+        position: absolute;
+        left: -10px;
+        margin-top: 4px;
+        font-size: 14px;
+        color: $gray-darker;
+      }
+    }
+
+    .submenu {
+      @include transition(all $animationTime ease-out);
+      margin-left: $spacing;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      margin-top: 0px;
+      height: 0;
+      overflow: hidden;
+
+      .badge {
+        opacity: 0;
+      }
+
+      &.in {
+        .badge {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    li {
+      a {
+        @include transition(color .2s ease-out);
+        cursor: pointer;
+        color: $sidebar-link-color;
+        font-weight: 400;
+        padding: 5px 0 5px $spacing;
+        display: block;
+        text-decoration: none;
+
+        i {
+          min-width: 13px;
+          display: inline-block;
+          text-align: center;
+          margin-right: 3px;
+        }
+
+        .badge {
+          @include transition(opacity .2s ease-out);
+          float: right;
+          opacity: 1;
+          background-color: lighten($sidebar-color, 5%);
+        }
+
+        &.active {
+          font-weight: bold;
+          color: $sidebar-active-color !important;
+        }
+
+        &:hover {
+          color: $white;
+        }
+
+        &:active {
+          color: $gray-lightest;
+        }
+      }
+    }
+  }
+
+  .heading {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: $sidebar-heading-color ;
+  }
+}
+
+#main-sidebar {
+  @include userSelect;
+  width: $mainSidebarWidth;
+  padding-bottom: 100px;
+
+  &.in {
+    z-index: 2;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  #sidebar-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: $mainSidebarWidth;
+    background: $sidebar-footer-color;
+    margin-top: $big-spacing;
+    padding: 20px;
+
+    a {
+      @include transition(color $animationTime ease-out);
+    }
+
+    .user-name {
+      font-weight: bold;
+      color: $gray-light;
+
+      &:hover {
+        color: $gray-lighter;
+      }
+
+      &:active {
+        color: $gray-lightest;
+      }
+    }
+
+    .action{
+      display: block;
+      padding: 5px 0 0;
+      text-transform: uppercase;
+      color: $gray-dark;
+
+      &:hover {
+        color: $red;
+      }
+
+      &:active {
+        color: $gray-light;
+      }
+    }
+  }
+}
+
+#sidebar-alt {
+  right: 0;
+  padding: $big-spacing 25px 25px;
+  width: $altSidebarWidth;
+  color: $gray-lightest;
+
+  a {
+    color: $gray-lightest;
+    text-decoration: underline;
+  }
+
+  &.in {
+    // The main sidebar has a z-index of 2.
+    // We make this higher then open but the default is lower.
+    z-index: 3;
+  }
+}
+
+#main-sidebar.in ~ #main-header, #main-sidebar.in ~ #main-content  {
+  @include openMixin($mainSidebarWidth, left);
+}
+
+#sidebar-alt.in ~ #main-header, #sidebar-alt.in ~ #main-content  {
+  @include openMixin(-$altSidebarWidth, right);
+}

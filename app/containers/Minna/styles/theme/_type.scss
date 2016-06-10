@@ -1,0 +1,13 @@
+mark, .mark {
+  // If the accent color is not too light, use if for the bg of the mark
+  @if lightness($accent) < 80% {
+    background-color: rgba($accent, .2)  !important;
+  }
+}
+
+.text-accent {
+
+  @if lightness($accent) < 80% {
+    color: $accent;
+  }
+}

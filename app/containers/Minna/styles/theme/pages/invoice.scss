@@ -1,0 +1,138 @@
+#main-content #page-invoice {
+
+  $invoice-max-width: 1000px;
+
+  background-color: transparent;
+    overflow-x: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+  #invoice-header {
+
+    @media print {
+      display: none;
+    }
+
+    margin-bottom: 20px;
+    max-width: $invoice-max-width;
+
+    button {
+      margin-bottom: 15px;
+
+      + button {
+        margin-left: 10px;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  #invoice-container {
+    max-width: 1000px;
+    min-height: $invoice-max-width;
+    min-width: 650px;
+    padding: 50px;
+    margin-bottom: 30px;
+    background-color: #fff;
+  }
+
+  #invoice-headline {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 5px;
+    text-shadow: 2px 2px $accent-dark;
+    background-color: $accent;
+  }
+
+  .small-header {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-right: $spacing;
+    font-size: 12px;
+    width: 120px;
+    text-align: right;
+    color: $gray-light;
+    text-transform: uppercase;
+  }
+
+  address {
+    border-left: 1px solid $accent;
+    display: inline-block;
+    padding-left: $spacing;
+    color: $gray;
+
+    strong {
+      color: $gray-dark;
+    }
+  }
+
+  #invoice-metadata{
+    td:first-child {
+      width: 100px;
+    }
+
+    td:last-child {
+      height: 30px;
+    }
+  }
+
+  #invoice-table {
+    margin-top: 50px;
+
+    .amount {
+      text-align: right;
+    }
+
+    tfoot {
+      tr:first-child {
+        td {
+          border-top: 1px solid $gray-lightest;
+          padding-top: $spacing * 2;
+        }
+      }
+
+      td {
+        border: none;
+        vertical-align: middle;
+
+        hr {
+          margin-top: 5px;
+          margin-bottom: 5px;
+          border-color: $gray-lightest;
+        }
+      }
+
+      .notes {
+
+        .notes-headline {
+          margin-top: 0;
+        }
+
+        p {
+          color: $gray-light;
+          border-top: 1px solid $gray-lightest;
+          padding-top: 5px;
+          margin-top: 5px;
+          max-width: 500px;
+        }
+      }
+    }
+
+    .footer-header {
+      text-align: right;
+      margin-right: $spacing;
+      float: right;
+
+
+      &.headline-total {
+        font-size: $font-size-h4;
+        font-weight: bold;
+      }
+    }
+  }
+}

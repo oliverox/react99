@@ -1,0 +1,32 @@
+#page-register, #page-login {
+
+  padding-top: 100px;
+
+  .logo {
+    width: 75%;
+    max-width: 250px;
+    display: block;
+    margin: 0 auto 0;
+  }
+
+  .the-header {
+    margin: $spacing-large 0;
+  }
+
+  form {
+    margin: $spacing-large 0;
+  }
+
+  hr {
+    margin: 30px 0;
+  }
+
+  .btn-block {
+    padding: $spacing;
+  }
+
+  footer {
+    margin-top: $spacing-large;
+  }
+
+}
